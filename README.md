@@ -26,7 +26,8 @@ La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** q
 ### Notas sobre el plano de conexiones
 - El plano **PLANO GALGA GRUPO 8** contiene el diagrama completo de conexión (alimentación, pines del ESP32 y referencias físicas de la galga).
 - 
-
+## 📄 Plano de conexiones
+[Ver plano completo del grupo 8 (PDF)](PLANO%20GALGA%20GRUPO%208.pdf)
 
 
 ## Periférico a trabajar
