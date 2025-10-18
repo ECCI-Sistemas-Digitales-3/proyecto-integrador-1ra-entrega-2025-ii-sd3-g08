@@ -11,7 +11,7 @@ Julian Rodriguez
 
 ## Arquitectura propuesta
 
-La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** que actúa como unidad central de adquisición y procesamiento. El diseño contempla una fuente de alimentación de 5 V, conexiones claras de alimentación (VCC/GND) y el mapeo de entradas y salidas entre el ESP32 y los periféricos del sistema, tal como se muestra en el plano de conexiones del grupo. :contentReference[oaicite:0]{index=0}
+La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** que actúa como unidad central de adquisición y procesamiento. El diseño contempla una fuente de alimentación de 5 V, conexiones claras de alimentación (VCC/GND) y el mapeo de entradas y salidas entre el ESP32 y los periféricos del sistema, tal como se muestra en el plano de conexiones del grupo. 
 
 ### Componentes principales
 - **Controlador:** ESP32 (unidad de procesamiento y comunicaciones).
@@ -25,7 +25,12 @@ La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** q
 
 ### Notas sobre el plano de conexiones
 - El plano **PLANO GALGA GRUPO 8** contiene el diagrama completo de conexión (alimentación, pines del ESP32 y referencias físicas de la galga).
-- 
+
+##  Arquitectura propuesta
+
+![Plano de la galga - Grupo 8](images/plano_galga_grupo8.png)
+
+
 ## 📄 Plano de conexiones
 [Ver plano completo del grupo 8 (PDF)](PLANO%20GALGA%20GRUPO%208.pdf)
 
