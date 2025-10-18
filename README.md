@@ -26,11 +26,10 @@ La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** q
 
 ##  Arquitectura propuesta
 
-![Plano de la galga - Grupo 8](images/plano_galga_grupo8.png)
+![Plano de la galga - Grupo 8](images/PLANO%20GALGA%20GRUPO%208_page-0001.jpg)
 
-
-## 📄 Plano de conexiones
 [Ver plano completo del grupo 8 (PDF)](PLANO%20GALGA%20GRUPO%208.pdf)
+
 
 
 ## Periférico a trabajar
