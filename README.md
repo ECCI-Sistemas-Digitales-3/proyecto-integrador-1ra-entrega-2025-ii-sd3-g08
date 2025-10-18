@@ -2,10 +2,30 @@
 # Proyecto integrador 1ra Entrega
 
 ## Integrantes
-
+Camilo Correa
+Ricardo Sabogal
+Julian Rodriguez
 
 
 ## Arquitectura propuesta
+
+## Arquitectura propuesta
+
+La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** que actúa como unidad central de adquisición y procesamiento. El diseño contempla una fuente de alimentación de 5 V, conexiones claras de alimentación (VCC/GND) y el mapeo de entradas y salidas entre el ESP32 y los periféricos del sistema, tal como se muestra en el plano de conexiones del grupo. :contentReference[oaicite:0]{index=0}
+
+### Componentes principales
+- **Controlador:** ESP32 (unidad de procesamiento y comunicaciones).
+- **Alimentación:** Fuente DC 5 V con rails VCC (+5 V) y GND.
+- **Periféricos:** Sensores (entradas analógicas/digitales), actuadores y/o displays conectados a pines GPIO del ESP32 según el plano.
+- **Conectividad interna:** Señales digitales/analógicas y buses de comunicación (UART/I²C/SPI) según se requiera por cada periférico.
+
+### Flujo básico de la arquitectura
+[Sensor / Entrada] -> [ESP32 (lectura ADC / digital)] -> [Procesamiento / Filtrado] -> [Salida / Display / Actuador o Comunicación]
+
+
+### Notas sobre el plano de conexiones
+- El plano **PLANO GALGA GRUPO 8** contiene el diagrama completo de conexión (alimentación, pines del ESP32 y referencias físicas de la galga).
+- 
 
 
 
