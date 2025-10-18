@@ -9,8 +9,6 @@ Julian Rodriguez
 
 ## Arquitectura propuesta
 
-## Arquitectura propuesta
-
 La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** que actúa como unidad central de adquisición y procesamiento. El diseño contempla una fuente de alimentación de 5 V, conexiones claras de alimentación (VCC/GND) y el mapeo de entradas y salidas entre el ESP32 y los periféricos del sistema, tal como se muestra en el plano de conexiones del grupo. 
 
 ### Componentes principales
