@@ -31,10 +31,59 @@ La arquitectura propuesta se basa en una **GALGA** controlada por un **ESP32** q
 [Ver plano completo del grupo 8 (PDF)](PLANO%20GALGA%20GRUPO%208.pdf)
 
 
-
 ## Periférico a trabajar
 
+El periférico principal del proyecto es una **galga extensiométrica**, un sensor resistivo que permite medir **deformaciones mecánicas** en una superficie o estructura. Su principio de funcionamiento se basa en la **variación de la resistencia eléctrica** cuando el material al que está adherida se estira o comprime. 
 
-## Avances
+### Principio de funcionamiento
+Cuando la galga se somete a una tensión mecánica, su resistencia cambia proporcionalmente al esfuerzo aplicado. Este cambio suele ser muy pequeño (del orden de milésimas de ohmios), por lo que se requiere un **circuito amplificador de señal** antes de enviarla al microcontrolador. Para este propósito se utiliza generalmente un **amplificador de instrumentación** como el **HX711** o un amplificador operacional configurado como **puente de Wheatstone**.
 
-<!-- Subir en una carpeta src los códigos que tienen hasta el momento y esta sección agregar lo que consideren necesario referente a sus avances. -->
+La salida del amplificador se conecta a una entrada **ADC (conversor analógico-digital)** del **ESP32**, que digitaliza la señal para su posterior procesamiento y visualización.
+
+### Conexión con el ESP32
+- **Alimentación:** la galga y el amplificador operan con 5 V o 3.3 V según el módulo empleado.
+- **Entradas analógicas:** el ESP32 recibe la señal amplificada en uno de sus pines ADC (por ejemplo GPIO34 o GPIO35).
+- **Comunicación:** si se usa el módulo HX711, la lectura se realiza mediante protocolo digital con los pines `DT` y `SCK`.
+
+### Aplicación en el proyecto
+La galga permite **medir la fuerza o peso aplicado sobre una superficie**, y los datos adquiridos se procesan en el ESP32 para luego ser **transmitidos inalámbricamente** al nodo receptor mediante los **módulos RF de 433 MHz (ASK/FSK)**.  
+De esta manera, el sistema puede monitorear en tiempo real el comportamiento del sensor sin necesidad de conexión física directa.
+
+### Esquema funcional
+
+[Galga extensiométrica] → [Amplificador / HX711] → [ESP32 (ADC o digital)] → [Módulo TX 433 MHz] → (Transmisión inalámbrica)
+
+
+### Componentes involucrados
+- Galga extensiométrica (sensor principal).  
+- Módulo amplificador HX711.  
+- Microcontrolador ESP32.  
+- Fuente de alimentación de 5 V.  
+- Módulo transmisor RF 433 MHz.  
+
+El sistema permite medir, procesar y transmitir datos de fuerza o peso sin necesidad de una conexión física entre el sensor y el punto de monitoreo.
+
+---
+
+## 🧩 Avances
+
+Durante el desarrollo del proyecto se realizó la **conexión e integración del sensor de galga con el módulo HX711 y el ESP32**, verificando la lectura correcta de datos desde el sensor y su comunicación estable con el microcontrolador.  
+
+A continuación, se muestran las imágenes del montaje y pruebas iniciales:
+
+<p align="center">
+  <img src="images/galga%201.jpg" alt="Montaje galga - Imagen 1" width="500"><br>
+  <em>Figura 1. Conexión del ESP32 con el módulo HX711 y la galga extensiométrica.</em>
+</p>
+
+<p align="center">
+  <img src="images/galga%202.jpg" alt="Montaje galga - Imagen 2" width="500"><br>
+  <em>Figura 2. Prueba práctica del sistema con carga aplicada.</em>
+</p>
+
+En las pruebas iniciales se comprobó la correcta alimentación del sistema, la detección de variaciones de señal en el HX711 al aplicar peso sobre la galga y la estabilidad de comunicación con el ESP32.  
+Los próximos pasos incluirán la transmisión inalámbrica de los datos mediante el módulo **RF 433 MHz** y la validación de la lectura remota en el nodo receptor.
+
+---
+
+
